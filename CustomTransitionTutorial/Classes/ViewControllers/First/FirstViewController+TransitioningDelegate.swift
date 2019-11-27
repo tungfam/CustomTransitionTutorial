@@ -7,3 +7,17 @@
 //
 
 import UIKit
+
+// 1
+extension FirstViewController: UIViewControllerTransitioningDelegate {
+
+    // 2
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+
+    // 3
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
+}

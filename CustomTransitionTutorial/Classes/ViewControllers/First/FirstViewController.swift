@@ -32,6 +32,9 @@ class FirstViewController: UIViewController {
     func presentSecondViewController(with data: CellData) {
         let secondViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
 
+        // 4
+        secondViewController.transitioningDelegate = self
+
         secondViewController.modalPresentationStyle = .fullScreen
         secondViewController.data = data
         present(secondViewController, animated: true)
