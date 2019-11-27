@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60A36C6238EA4ED0053E976 /* FirstViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A36C5238EA4ED0053E976 /* FirstViewController+CollectionView.swift */; };
+		A60A36C8238EA59C0053E976 /* FirstViewController+TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A36C7238EA59C0053E976 /* FirstViewController+TransitioningDelegate.swift */; };
+		A60A36CA238EA5D60053E976 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60A36C9238EA5D60053E976 /* Animator.swift */; };
 		A64F53392378BF880072A05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F53382378BF880072A05D /* AppDelegate.swift */; };
 		A64F533B2378BF880072A05D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F533A2378BF880072A05D /* SceneDelegate.swift */; };
 		A64F53422378BF8B0072A05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64F53412378BF8B0072A05D /* Assets.xcassets */; };
@@ -15,10 +18,13 @@
 		A64F53512378C10D0072A05D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F534E2378C10D0072A05D /* FirstViewController.swift */; };
 		A64F53522378C10D0072A05D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F534F2378C10D0072A05D /* CollectionViewCell.swift */; };
 		A64F53532378C10D0072A05D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F53502378C10D0072A05D /* SecondViewController.swift */; };
-		A64F53552378C16F0072A05D /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F53542378C16F0072A05D /* DataManger.swift */; };
+		A64F53552378C16F0072A05D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64F53542378C16F0072A05D /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A60A36C5238EA4ED0053E976 /* FirstViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		A60A36C7238EA59C0053E976 /* FirstViewController+TransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstViewController+TransitioningDelegate.swift"; sourceTree = "<group>"; };
+		A60A36C9238EA5D60053E976 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		A64F53352378BF880072A05D /* CustomTransitionTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitionTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64F53382378BF880072A05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A64F533A2378BF880072A05D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +35,7 @@
 		A64F534E2378C10D0072A05D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		A64F534F2378C10D0072A05D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A64F53502378C10D0072A05D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		A64F53542378C16F0072A05D /* DataManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
+		A64F53542378C16F0072A05D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A60A36BF238E84390053E976 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A64F53382378BF880072A05D /* AppDelegate.swift */,
+				A64F533A2378BF880072A05D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A60A36C0238E84430053E976 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A64F53542378C16F0072A05D /* DataManager.swift */,
+				A64F534C2378C0D50072A05D /* Main.storyboard */,
+				A64F53412378BF8B0072A05D /* Assets.xcassets */,
+				A64F53432378BF8B0072A05D /* LaunchScreen.storyboard */,
+				A64F53462378BF8B0072A05D /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A60A36C1238E84AB0053E976 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A60A36C2238E84BA0053E976 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A60A36C2238E84BA0053E976 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A60A36C9238EA5D60053E976 /* Animator.swift */,
+				A60A36C3238EA4D20053E976 /* First */,
+				A60A36C4238EA4D70053E976 /* Second */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A60A36C3238EA4D20053E976 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				A64F534E2378C10D0072A05D /* FirstViewController.swift */,
+				A60A36C5238EA4ED0053E976 /* FirstViewController+CollectionView.swift */,
+				A60A36C7238EA59C0053E976 /* FirstViewController+TransitioningDelegate.swift */,
+				A64F534F2378C10D0072A05D /* CollectionViewCell.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		A60A36C4238EA4D70053E976 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				A64F53502378C10D0072A05D /* SecondViewController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		A64F532C2378BF880072A05D = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +126,9 @@
 		A64F53372378BF880072A05D /* CustomTransitionTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				A64F53382378BF880072A05D /* AppDelegate.swift */,
-				A64F533A2378BF880072A05D /* SceneDelegate.swift */,
-				A64F534F2378C10D0072A05D /* CollectionViewCell.swift */,
-				A64F534E2378C10D0072A05D /* FirstViewController.swift */,
-				A64F53502378C10D0072A05D /* SecondViewController.swift */,
-				A64F53542378C16F0072A05D /* DataManger.swift */,
-				A64F534C2378C0D50072A05D /* Main.storyboard */,
-				A64F53412378BF8B0072A05D /* Assets.xcassets */,
-				A64F53432378BF8B0072A05D /* LaunchScreen.storyboard */,
-				A64F53462378BF8B0072A05D /* Info.plist */,
+				A60A36BF238E84390053E976 /* App */,
+				A60A36C1238E84AB0053E976 /* Classes */,
+				A60A36C0238E84430053E976 /* Resources */,
 			);
 			path = CustomTransitionTutorial;
 			sourceTree = "<group>";
@@ -147,12 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A60A36C8238EA59C0053E976 /* FirstViewController+TransitioningDelegate.swift in Sources */,
 				A64F53532378C10D0072A05D /* SecondViewController.swift in Sources */,
 				A64F53522378C10D0072A05D /* CollectionViewCell.swift in Sources */,
 				A64F53392378BF880072A05D /* AppDelegate.swift in Sources */,
 				A64F533B2378BF880072A05D /* SceneDelegate.swift in Sources */,
+				A60A36C6238EA4ED0053E976 /* FirstViewController+CollectionView.swift in Sources */,
+				A60A36CA238EA5D60053E976 /* Animator.swift in Sources */,
 				A64F53512378C10D0072A05D /* FirstViewController.swift in Sources */,
-				A64F53552378C16F0072A05D /* DataManger.swift in Sources */,
+				A64F53552378C16F0072A05D /* DataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +349,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRM459U248;
-				INFOPLIST_FILE = CustomTransitionTutorial/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CustomTransitionTutorial/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +367,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRM459U248;
-				INFOPLIST_FILE = CustomTransitionTutorial/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CustomTransitionTutorial/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

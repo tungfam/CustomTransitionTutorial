@@ -1,5 +1,5 @@
 //
-//  DataManger.swift
+//  DataManager.swift
 //  CustomTransitionDemo
 //
 //  Created by Tung on 10.11.19.
@@ -8,9 +8,10 @@
 
 import Foundation
 
-// Yes, singleton. It doesn't matter since this tutorial is about the Animation transition :)
+// Yes, it's a singleton.
+// But it doesn't matter since this tutorial is about the Animation transition :)
 
-class DataManger {
+class DataManager {
 
     private init() {}
 
