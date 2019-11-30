@@ -20,10 +20,12 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
 
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-
+        // 6
+        selectedCell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        // 7
+        selectedCellImageViewSnapshot = selectedCell?.locationImageView.snapshotView(afterScreenUpdates: false)
+        
         presentSecondViewController(with: DataManager.data[indexPath.row])
     }
 

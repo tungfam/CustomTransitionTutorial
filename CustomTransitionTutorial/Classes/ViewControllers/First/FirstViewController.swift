@@ -10,11 +10,14 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-
+    // 5
+    var selectedCell: CollectionViewCell?
+    var selectedCellImageViewSnapshot: UIView?
 
     @IBOutlet private var collectionView: UICollectionView!
 
-
+    // 15
+    var animator: Animator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
