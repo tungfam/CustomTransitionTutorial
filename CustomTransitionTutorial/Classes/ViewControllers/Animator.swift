@@ -55,8 +55,57 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
 
         containerView.addSubview(toView)
 
-        // 20
-        transitionContext.completeTransition(true)
+        // 21
+        guard let selectedCell = firstViewController.selectedCell,
+            let window = firstViewController.view.window ?? secondViewController.view.window,
+            let cellImageSnapshot = selectedCell.locationImageView.snapshotView(afterScreenUpdates: true),
+            let controllerImageSnapshot = secondViewController.locationImageView.snapshotView(afterScreenUpdates: true)
+            else {
+                transitionContext.completeTransition(true)
+                return
+        }
+
+        let isPresenting = type.isPresenting
+
+        // 22
+        let imageViewSnapshot: UIView
+
+        if isPresenting {
+            imageViewSnapshot = cellImageSnapshot
+        } else {
+            imageViewSnapshot = controllerImageSnapshot
+        }
+
+        // 23
+        toView.alpha = 0
+
+        // 24
+        [imageViewSnapshot].forEach { containerView.addSubview($0) }
+
+        // 25
+        let controllerImageViewRect = secondViewController.locationImageView.convert(secondViewController.locationImageView.bounds, to: window)
+
+        // 26
+        [imageViewSnapshot].forEach {
+            $0.frame = isPresenting ? cellImageViewRect : controllerImageViewRect
+        }
+
+        // 27
+        UIView.animateKeyframes(withDuration: Self.duration, delay: 0, options: .calculationModeCubic, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1) {
+                // 28
+                imageViewSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
+            }
+        }, completion: { _ in
+            // 29
+            imageViewSnapshot.removeFromSuperview()
+
+            // 30
+            toView.alpha = 1
+
+            // 31
+            transitionContext.completeTransition(true)
+        })
     }
 }
 
