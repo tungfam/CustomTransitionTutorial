@@ -68,16 +68,30 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
 
         let isPresenting = type.isPresenting
 
+        // 40
+        let backgroundView: UIView
+        let fadeView = UIView(frame: containerView.bounds)
+        fadeView.backgroundColor = secondViewController.view.backgroundColor
+
         // 33
         if isPresenting {
             selectedCellImageViewSnapshot = cellImageSnapshot
+
+            // 41
+            backgroundView = UIView(frame: containerView.bounds)
+            backgroundView.addSubview(fadeView)
+            fadeView.alpha = 0
+        } else {
+            backgroundView = firstViewController.view.snapshotView(afterScreenUpdates: true) ?? fadeView
+            backgroundView.addSubview(fadeView)
         }
 
         // 23
         toView.alpha = 0
 
         // 34
-        [selectedCellImageViewSnapshot, controllerImageSnapshot].forEach { containerView.addSubview($0) }
+        // 42
+        [backgroundView, selectedCellImageViewSnapshot, controllerImageSnapshot].forEach { containerView.addSubview($0) }
 
         // 25
         let controllerImageViewRect = secondViewController.locationImageView.convert(secondViewController.locationImageView.bounds, to: window)
@@ -100,6 +114,9 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
                 // 38
                 self.selectedCellImageViewSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
                 controllerImageSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
+
+                // 43
+                fadeView.alpha = isPresenting ? 1 : 0
             }
 
             // 39
@@ -111,6 +128,9 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
             // 29
             self.selectedCellImageViewSnapshot.removeFromSuperview()
             controllerImageSnapshot.removeFromSuperview()
+
+            // 44
+            backgroundView.removeFromSuperview()
 
             // 30
             toView.alpha = 1
