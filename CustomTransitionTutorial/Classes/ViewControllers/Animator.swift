@@ -113,6 +113,10 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         // 35
         [selectedCellImageViewSnapshot, controllerImageSnapshot].forEach {
             $0.frame = isPresenting ? cellImageViewRect : controllerImageViewRect
+
+            // 59
+            $0.layer.cornerRadius = isPresenting ? 12 : 0
+            $0.layer.masksToBounds = true
         }
 
         // 36
@@ -141,6 +145,11 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
 
                 // 51
                 cellLabelSnapshot.frame = isPresenting ? controllerLabelRect : self.cellLabelRect
+
+                // 60
+                [controllerImageSnapshot, self.selectedCellImageViewSnapshot].forEach {
+                    $0.layer.cornerRadius = isPresenting ? 0 : 12
+                }
             }
 
             // 39
