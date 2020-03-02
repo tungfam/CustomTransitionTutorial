@@ -14,7 +14,7 @@ extension FirstViewController: UIViewControllerTransitioningDelegate {
     // 2
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         // 16
-        guard let firstViewController = presenting as? FirstViewController,
+        guard let firstViewController = (presenting as! UINavigationController).viewControllers.first  as? FirstViewController,
             let secondViewController = presented as? SecondViewController,
             let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
             else { return nil }
