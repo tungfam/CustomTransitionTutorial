@@ -84,6 +84,8 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         // 33
         if isPresenting {
             selectedCellImageViewSnapshot = cellImageSnapshot
+            
+            selectedCell.alpha = 0
 
             // 41
             backgroundView = UIView(frame: containerView.bounds)
@@ -92,6 +94,7 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         } else {
             backgroundView = firstViewController.view.snapshotView(afterScreenUpdates: true) ?? fadeView
             backgroundView.addSubview(fadeView)
+            selectedCell.alpha = 1
         }
 
         // 23
